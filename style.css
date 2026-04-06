@@ -1,0 +1,1685 @@
+  
+  /* =====================================
+   STYLE HEADER
+===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CELÝ HEADER */
+header {
+  background: white;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;   /* vystředění celé lišty */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo img {
+  height: 80px;  /* zvětšeno */
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 50px;  /* větší mezery */
+}
+
+/* ODKAZY */
+.menu li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* ZELENÁ BARVA PŘI HOVER */
+.menu li a:hover {
+  color: #2e7d32;
+}
+
+/* ANIMOVANÁ ČÁRA */
+.menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background-color: #2e7d32;
+  transition: width 0.4s ease;
+}
+
+/* HOVER EFEKT ČÁRY */
+.menu li a:hover::after {
+  width: 100%;
+}
+
+/* 1. HLAVNÍ NADPIS (Banner)*/
+main h1 {
+  height: 34vh;
+  min-height: 250px;
+  margin: 40px 4% 40px 4%; 
+  background: url("images/Solid_green.svg.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 20px;
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+main h1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+
+
+
+
+/* =====================================
+      STYLE OCENENENI
+===================================== */
+
+.oceneni {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  padding: 70px 8%;
+  margin-top: 70px;
+}
+
+/* Všechny 3 bloky */
+.kontakt,
+.oceneni-center,
+.oceneni-right {
+  flex: 1;
+}
+
+/* Zarovnání */
+.kontakt {
+  text-align: left;
+}
+
+.oceneni-center {
+  text-align: center;
+}
+
+.oceneni-right {
+  text-align: right;
+}
+
+/* Nadpisy */
+.oceneni h2 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+/* ===== KONTAKT ===== */
+
+.kontakt p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.kontakt a {
+  text-decoration: none;
+  color: #1a1a1a;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover animace jako menu */
+.kontakt a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #2e7d32;
+  transition: width 0.3s ease;
+}
+
+.kontakt a:hover {
+  color: #2e7d32;
+}
+
+.kontakt a:hover::after {
+  width: 100%;
+}
+
+/* ===== OCENĚNÍ ===== */
+
+.oceneni-center img {
+  max-width: 160px;  /* Na velkém monitoru budou mít max 160px */
+  width: 42%;        /* MAGIE: Na notebooku se zmenší tak, aby zabraly necelou půlku sloupce */
+  margin: 15px 2%;   /* Okraje se taky inteligentně přizpůsobí */
+  transition: all 0.35s ease;
+  filter: grayscale(20%);
+  display: inline-block; /* Pojistka, aby stály vedle sebe */
+  vertical-align: middle;
+}
+
+.oceneni-center img:hover {
+  transform: translateY(-8px) scale(1.08);
+  filter: grayscale(0%);
+}
+
+/* ===== SOUTĚŽ ===== */
+
+.oceneni-right img {
+  max-width: 130px;  /* Na velkém monitoru to nepustí obrázek přes 150px */
+  width: 100%;       /* MAGIE: Na notebooku/mobilu se plynule zmenší podle šířky sloupce */
+  height: auto;      /* Aby se obrázek nedeformoval a zůstal hezky proporční */
+  transition: all 0.3s ease;
+}
+
+.oceneni-right img:hover {
+  transform: translateY(-6px) scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1000px) {
+  .oceneni {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .kontakt,
+  .oceneni-center,
+  .oceneni-right {
+    text-align: center;
+  }
+}
+
+
+
+
+/* =====================================
+   STYLE HOMEPAGE
+===================================== */
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+/* =====================================
+   GRID jen pro horní část
+===================================== */
+
+.homepage .homepage-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
+  padding: 0 8% 80px 8%;
+  align-items: start;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.homepage .hero {
+  grid-column: 1 / -1;
+  height: 34vh;
+  min-height: 250px;
+  margin-top: 20px; /* jen malé odsazení */
+  background: url("images/Solid_green.svg.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 20px;
+}
+
+.homepage .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  border-radius: 20px;
+}
+
+.homepage .hero h1 {
+  position: relative;
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+/* =====================================
+   ZÁKLADNÍ INFORMACE
+===================================== */
+.homepage .zakladniinformace,
+.homepage .aktuality {
+  margin-top: -60px;
+}
+
+.homepage .zakladniinformace {
+  padding-top: 60px;
+  font-size: 17px;
+  line-height: 1.85;
+  color: black;
+}
+
+.homepage .zakladniinformace h2 {
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+/* Obrázek hned k prvnímu odstavci */
+
+.homepage .zakladniinformace img {
+  width: 48%;
+  float: right;
+  margin: 0 0 25px 35px;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover efekt jako u ocenění */
+
+.homepage .zakladniinformace img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+/* video*/
+.video {
+    margin: -20px auto 60px auto; /* Vycentrování celého bloku */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video iframe {
+    /* STYL PODLE AKTUALIT */
+    background-color: white;      /* Bílé pozadí pod videem */
+    padding: 15px;                /* Mezera pro ten bílý "rámeček" */
+    border-radius: 22px;          /* Stejné zaoblení jako u obsazenosti */
+    box-shadow: 0 15px 45px rgba(0,0,0,0.1); /* Ten hezký stín z aktualit */
+    
+    /* Zelená čára nahoře */
+    border-top: 5px solid #2d5a27; 
+    
+    /* Zajištění, že se nerozbije šířka z HTML */
+    max-width: 100%; 
+    height: 420px; /* Výška pro 16:9 poměr při šířce 100% */
+}
+
+
+
+/* =====================================
+   AKTUALITY
+===================================== */
+
+.homepage .aktuality {
+  margin-top: 60px;
+  background: white;
+  padding: 45px;
+  border-radius: 22px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.06);
+  border-top: 5px solid #2e7d32;
+  height: fit-content;
+}
+
+.homepage .aktuality h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.homepage .rok {
+  margin-bottom: 28px;
+}
+
+.homepage .rok h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: black;
+}
+
+.homepage .rok ul {
+  padding-left: 20px;
+}
+
+.homepage .rok li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: black;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1100px) {
+
+  .homepage .homepage-top {
+    grid-template-columns: 1fr;
+  }
+
+  .homepage .zakladniinformace img {
+    float: none;
+    width: 100%;
+    margin: 30px 0;
+  }
+
+}
+
+
+
+/* =====================================
+   KEMPOVÁNÍ
+==================================== */
+/* 3. OBSAH POD BANNEREM - PŮVODNÍ, NEDOTKNUTO */
+.kemp-page .kemp {
+  padding: 10px 8% 0 8%; 
+  margin-bottom: 80px;
+}
+
+.kemp-page .kemp h2 {
+  font-size: 34px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.kemp-page .kemp img {
+  width: 45%; 
+  float: right;
+  margin: 10px 0 25px 40px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease;
+}
+
+.kemp-page .kemp img:hover {
+  transform: scale(1.03);
+}
+
+/* 4. OBSAZENOST - Rámeček (ten, co se povedl) */
+.kemp-page .obsazenost {
+  margin: 40px 8% 80px 8%;
+  background: white;
+  padding: 45px;
+  border-radius: 22px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.06);
+  border-top: 5px solid #2e7d32;
+}
+
+.kemp-page .obsazenost h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* =====================================
+   SEKCE PLÁNEK KEMPU
+===================================== */
+
+/* Hlavní sekce */
+.planek-sekce {
+    padding-top: 0px; 
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* Nadpis H3 - Těsně u textu */
+.planek-sekce h3 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 0;       
+    margin-bottom: 30px;  
+    color: #1a1a1a;
+}
+
+/* Kontejner pro mapy */
+.planek-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Automaticky udělá bezpečnou mezeru uprostřed */
+    width: 100%;
+    padding: 0 8%;
+    box-sizing: border-box; /* Zabrání přetékání mimo obrazovku */
+}
+
+/* SAMOTNÁ FOTKA MAPY */
+.planek-container img {
+    width: 100%;
+    max-width: 48%; /* TVŮJ NÁPAD S PROCENTY: Přesně tohle zabrání scrollování! */
+    height: auto;
+    object-fit: contain; /* Obrázek se nedeformuje */
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efekt při najetí myší na mapu */
+.planek-container img:hover {
+    transform: scale(1.02); /* Méně agresivní zvětšení */
+}
+/* =====================================
+   RESPONSIVE 
+===================================== */
+@media (max-width: 1100px)  {
+  .kemp-page .hero {
+    margin: 20px 20px 0 20px;
+  }
+
+  .kemp-page .kemp img {
+    float: none;
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  .kemp-page .obsazenost {
+    padding: 30px 20px;
+    margin: 20px 5% 50px 5%;
+  }
+
+  .kemp-page .planek-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; 
+  }
+
+.kemp-page .planek-container img {
+    width: 90%; 
+    max-width: 100%;
+    height: auto; 
+  }
+}
+
+/* =====================================
+   CENÍK
+===================================== */
+
+.cenik {
+    /* Původně tam bylo 80px na konci, teď tam dáme 0 */
+    padding: 10px 8% 0 8%; 
+    box-sizing: border-box;
+}
+
+/* Sjednocený hlavní nadpis sekce */
+.cenik h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 25px; /* Smazáno margin-top: 0; */
+}
+
+/* Podnadpisy pro jednotlivé tabulky (pokud je máš) */
+.cenik h3 {
+    font-size: 26px;
+    color: #000;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* --- TABULKY --- */
+.cenik table {
+    width: 94%; /* TABULKA O MALINKO UŽŠÍ */
+    margin: 20px auto 50px auto; /* auto ji krásně vycentruje doprostřed */
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif; /* Sjednocený font */
+    background-color: white;
+    
+    /* Moderní zakulacené rohy a jemný stín (jako u fotek) */
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+/* Hlavička tabulky (Zelená) */
+.cenik th {
+    background-color: #2d5a27;
+    color: white;
+    text-align: left;
+    padding: 15px 20px; /* Trošku víc vzduchu do buněk */
+    font-size: 17px;
+}
+
+/* Řádky */
+.cenik td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee; /* Jemnější linka */
+    color: #222;
+    font-size: 16px;
+}
+
+/* Zebra efekt (každý sudý řádek je lehce šedý) */
+.cenik tr:nth-child(even) {
+    background-color: #fbfbfb;
+}
+
+/* PROFI EFEKT: Při najetí myší na řádek se lehounce podbarví do zelena */
+.cenik tr:hover {
+    background-color: #f1f8f1;
+}
+
+/* --- ODRÁŽKY POD TABULKOU --- */
+.cenik ul {
+    margin-bottom: 0; /* Smazali jsme zbytečných 40px pod seznamem */
+    padding-left: 20px;
+    list-style-position: outside; 
+}
+
+.cenik li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* Černé puntíky */
+.cenik li::marker {
+    color: black;
+    font-weight: bold;
+}
+
+/* =====================================
+   RESPONZIVITA PRO MOBILY (CENÍK)
+===================================== */
+@media (max-width: 900px) {
+    .cenik table {
+        width: 100%; /* Na mobilu se tabulka roztáhne, ať není text zmačkaný */
+        
+        /* Záchrana proti scrollování stránky do stran! */
+        display: block; 
+        overflow-x: auto; /* Pokud se tabulka na malý mobil nevejde, bude se dát posouvat prstem doleva/doprava */
+        white-space: nowrap; /* Text se v buňkách nerozbije do ošklivých nudlí */
+    }
+}
+
+
+/* =====================================
+  KONTAKT
+===================================== */
+/* Karta formuláře */
+/* Karta formuláře - PŘÍSNÁ DIETA */
+.form-karta {
+    background: #ffffff;
+    padding: 20px; 
+    border-radius: 18px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    border-top: 5px solid #2d5a27;
+    width: 100%;
+    max-width: 420px; 
+    box-sizing: border-box; 
+    
+    /* OPRAVA: Tímhle ho přirazíme zpátky doleva, aby lícoval s textem */
+    margin: 0; 
+}
+.form-karta h3 {
+    margin-top: 0;
+    margin-bottom: 15px; 
+    font-size: 20px;     
+    color: #000;
+    text-align: left;
+}
+
+/* Jednotlivá pole */
+.pole {
+    margin-bottom: 15px; 
+    text-align: left;
+}
+
+.pole label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 13px;     
+}
+
+.pole input, 
+.pole textarea {
+    width: 100%;
+    max-width: 100%; 
+    padding: 8px 10px; /* Zmenšené vnitřní mezery políček */
+    border: 1px solid #ddd;
+    border-radius: 8px;  
+    font-size: 14px;     
+    font-family: sans-serif;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+}
+
+.pole input:focus, 
+.pole textarea:focus {
+    outline: none;
+    border-color: #2d5a27;
+}
+
+/* Tlačítko (vyčištěno, ponechána jen jedna verze) */
+.odeslat-tlacitko {
+    background-color: #2d5a27;
+    color: white;
+    padding: 12px 25px;  
+    border: none;
+    border-radius: 10px; 
+    font-size: 15px;     
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.odeslat-tlacitko:hover {
+    background-color: #1e3d1a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/* Responzivita - ZVĚTŠENO NA 1150px, aby to na noteboocích neblblo */
+@media (max-width: 1150px) {
+    .konatktni-udaje,
+    .poloha,
+    .kontakt-form-sekce {
+        float: none;
+        width: 100%; /* Roztáhne se na celou šířku */
+        max-width: 700px; /* Aby formulář pod mapou nebyl přes celou obrazovku */
+        margin: 0 auto 40px auto; /* Vystředí všechno pěkně doprostřed */
+    }
+}
+
+.oceneni {
+    clear: both; 
+}
+
+/* 1. LEVÁ STRANA: KONTAKTY */
+.konatktni-udaje {
+    float: left;
+    width: 34%;           
+    margin-left: 8%;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+/* 2. PRAVÁ STRANA: MAPA A CESTA */
+.poloha {
+    float: right;
+    width: 50%;           
+    margin-right: 8%;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+/* 3. LEVÁ STRANA: FORMULÁŘ */
+.kontakt-form-sekce {
+    float: left;
+    clear: left;
+    width: 34%;           
+    margin-left: 8%;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+}
+
+/* Style textů a nadpisů*/
+.kontakt h2,
+.kontakt h3,
+.kontakt p,
+.kontakt p strong,
+.cesta h3,
+.cesta p {
+    color: #000000;
+}
+
+.kontakt h2 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.kontakt h3 {
+    font-size: 20px;
+    margin: 25px 0 10px 0;
+}
+
+/* Hover efekt*/
+.kontakt p {
+    margin: 0;
+    padding: 8px 0;
+    font-size: 16px;
+    border-left: 0px solid #2d5a27;
+    transition: all 0.3s ease;
+}
+
+.kontakt p:hover {
+    border-left: 4px solid #2d5a27;
+    padding-left: 12px;
+}
+
+/* MAPA*/
+.mapa iframe {
+    width: 100%;          
+    height: 450px;        
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border-top: 5px solid #2d5a27;
+    margin-bottom: 60px;
+    display: block;
+}
+
+.cesta h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.cesta p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* ZMĚNĚNO Z 900px na 1100px */
+@media (max-width: 1100px) {
+    .konatktni-udaje,
+    .poloha,
+    .kontakt-form-sekce {
+        float: none;
+        width: auto;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+}
+
+/* =====================================
+  SLUŽBY
+===================================== */
+/* ========================================================
+   STRÁNKA SLUŽBY - MENŠÍ OBRÁZKY A CIK-CAK DESIGN
+   ======================================================== */
+
+/* Přitáhneme H1 blíž k obsahu */
+main:has(.sluzby) > h1 {
+    margin-bottom: 10px;
+}
+
+/* Ochrana tvé hotové sekce Ocenění dole */
+.oceneni {
+    clear: both;
+}
+
+/* Hlavní mřížka pro služby */
+.sluzby {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto max-content max-content max-content auto auto;
+    padding: 0 8%;
+    column-gap: 60px; 
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+/* Všechny texty čistě černé */
+.sluzby h2, .sluzby p {
+    color: #000000;
+}
+
+.sluzby h2 {
+    font-size: 34px; 
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.sluzby p {
+    font-size: 16px;
+    line-height: 1.7; 
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* ========================================================
+   POZICOVÁNÍ - STŘÍDÁNÍ STRAN (CIK-CAK)
+   ======================================================== */
+
+/* 1. Recepce */
+.recepce { grid-column: 1; grid-row: 1; align-self: center; margin-bottom: 80px; }
+.recepce-image { grid-column: 2; grid-row: 1; align-self: center; margin-bottom: 80px; }
+
+/* 2. Kiosek */
+.kiosek-image { grid-column: 1; grid-row: 2; align-self: center; margin-bottom: 80px; }
+.kiosek { grid-column: 2; grid-row: 2; align-self: center; margin-bottom: 80px; }
+
+/* 3. Půjčovna lodiček */
+.sluzby > h2 { grid-column: 1; grid-row: 3; margin-bottom: 15px; }
+.sluzby > p:nth-of-type(1) { grid-column: 1; grid-row: 4; }
+.sluzby > p:nth-of-type(2) { grid-column: 1; grid-row: 5; }
+.sluzby > p:nth-of-type(3) { grid-column: 1; grid-row: 6; margin-bottom: 80px; }
+
+.pujcovna-image {
+    grid-column: 2;
+    grid-row: 3 / 7; 
+    align-self: center;
+    margin-bottom: 80px;
+}
+
+/* 4. Obchod */
+.obchod-image { grid-column: 1; grid-row: 7; align-self: center; }
+.obchod { grid-column: 2; grid-row: 7; align-self: center; }
+
+/* Schování prázdného divu v HTML */
+.pujcovna { display: none; }
+
+/* ========================================================
+   ZMENŠENÉ OBRÁZKY S EFEKTEM (Jako u Ocenění)
+   ======================================================== */
+.sluzby img {
+    width: 80%; /* OBRÁZKY JSOU TEĎ MENŠÍ (Zabírají 80 % sloupce) */
+    margin: 0 auto; /* Vycentruje zmenšený obrázek v jeho sloupci */
+    border-radius: 20px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Příprava pro plynulý efekt */
+    display: block;
+}
+
+/* Klasické zvětšení při najetí myší */
+.sluzby img:hover {
+    transform: scale(1.05); /* Obrázek se hezky nafoukne */
+    box-shadow: 0 20px 45px rgba(0,0,0,0.12); /* Stín se mírně zvětší */
+}
+
+/* ========================================================
+   RESPONZIVITA (MOBILY)
+   ======================================================== */
+@media (max-width: 900px) {
+    .sluzby {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .sluzby img {
+        width: 100%; 
+    }
+    
+    .recepce { grid-column: 1; grid-row: 1; margin-bottom: 20px; }
+    .recepce-image { grid-column: 1; grid-row: 2; margin-bottom: 60px; }
+    
+    .kiosek { grid-column: 1; grid-row: 3; margin-bottom: 20px; }
+    .kiosek-image { grid-column: 1; grid-row: 4; margin-bottom: 60px; }
+    
+    .sluzby > h2 { grid-column: 1; grid-row: 5; margin-bottom: 10px; }
+    .sluzby > p:nth-of-type(1) { grid-column: 1; grid-row: 6; margin-bottom: 15px; }
+    .sluzby > p:nth-of-type(2) { grid-column: 1; grid-row: 7; margin-bottom: 15px; }
+    .sluzby > p:nth-of-type(3) { grid-column: 1; grid-row: 8; margin-bottom: 20px; }
+    .pujcovna-image { grid-column: 1; grid-row: 9; margin-bottom: 60px; }
+    
+    .obchod { grid-column: 1; grid-row: 10; margin-bottom: 20px; }
+    .obchod-image { grid-column: 1; grid-row: 11; margin-bottom: 0; }
+}
+
+/* =====================================
+   STRÁNKA KARAVANY
+===================================== */
+
+/* --- 1. ÚVOD: UBYTOVÁNÍ V KARAVANECH --- */
+
+.karavany {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 8% 0 8%; /* MEZERA OPRAVENA: Stejná jako u kempování */
+    column-gap: 60px;
+    margin-bottom: 80px;
+    align-items: start;
+    box-sizing: border-box; 
+}
+
+/* Jednotný nadpis jako všude jinde */
+.karavany h2 {
+    grid-column: 1 / -1; 
+    font-size: 34px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 25px; /* Tady jsem smazal ten margin-top: 0; */
+}
+
+.karavaning p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.karavaning-image img {
+    width: 85%; /* ZMENŠENÝ OBRÁZEK podle přání */
+    margin-left: auto; /* Přilepí zmenšený obrázek hezky doprava */
+    display: block;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.karavaning-image img:hover {
+    transform: scale(1.02);
+}
+
+/* --- 2. FOTOGALERIE KARAVANŮ --- */
+.fotogalerie {
+    padding: 0 8%;
+    margin-bottom: 80px;
+}
+
+.fotogalerie h3 {
+    font-size: 32px;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-align: center; /* NADPIS VYCENTROVÁN */
+}
+
+.fotogalerie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.fotogalerie-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3; 
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.fotogalerie-grid img:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* --- 3. CENY (Čistý text bez boxu a zelené barvy) --- */
+.ceny-karavanu {
+    padding: 0 8%;
+    margin-bottom: 60px;
+}
+
+.ceny-karavanu h3 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+.ceny p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.ceny b {
+    color: #000; /* Zelená odstraněna */
+    font-weight: bold;
+}
+
+.ceny ul {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.ceny li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+/* Černé odrážky u cen */
+.ceny li::marker {
+    color: #000; 
+}
+
+/* --- 4. REZERVACE (Rámeček ve stylu Obsazenosti) --- */
+.rezervace {
+    background: white;
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.06);
+    border-top: 5px solid #2e7d32;
+    box-sizing: border-box; 
+    margin: 0 8% 80px 8%; 
+}
+
+.rezervace h3 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+.rezervace p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.rezervace b {
+    color: black; 
+    font-size: 17px;
+}
+
+.rezervace ul {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.rezervace li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.rezervace li::marker {
+    color: black;
+    font-weight: bold;
+}
+
+.rezervace-kalendar {
+    margin-top: 35px;
+}
+
+.rezervace-kalendar h4 {
+    font-size: 26px;
+    margin: 0 0 10px 0;
+    color: #000;
+}
+
+.rezervace-kalendar-subtitle,
+.availability-meta,
+.availability-note {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+}
+
+.rezervace-kalendar-subtitle {
+    margin-bottom: 15px;
+}
+
+.availability-meta {
+    margin: 12px 0 18px 0;
+}
+
+.availability-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 16px;
+    margin: 0 0 18px 0;
+}
+
+.availability-mode,
+.availability-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.availability-btn {
+    border: 1px solid #cfd9cf;
+    background: #fff;
+    color: #1c1c1c;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.availability-btn:hover {
+    border-color: #aab8aa;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.availability-btn:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.availability-btn:focus-visible {
+    outline: 2px solid #2e7d32;
+    outline-offset: 2px;
+}
+
+.availability-btn.is-active {
+    background: #2d5a27;
+    border-color: #2d5a27;
+    color: #fff;
+}
+
+.availability-period-label {
+    display: inline-block;
+    min-width: 190px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d1d1d;
+}
+
+.calendar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.legend-item {
+    font-size: 14px;
+    border-radius: 999px;
+    padding: 6px 12px;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.legend-free {
+    background: #e9f6ea;
+    color: #1f6e28;
+}
+
+.legend-reserved {
+    background: #fdecec;
+    color: #b3261e;
+}
+
+.legend-tentative {
+    background: #fff4e5;
+    color: #a45a00;
+}
+
+.availability-month {
+    margin-top: 25px;
+}
+
+.availability-month h5 {
+    font-size: 22px;
+    margin: 0 0 12px 0;
+    color: #1a1a1a;
+    text-transform: capitalize;
+}
+
+.availability-table-wrap {
+    overflow-x: auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    background: #fff;              /* důležité */
+    border: 1px solid #dfe8df;
+}
+
+.availability-table {
+    width: 100%;
+    min-width: 860px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border: 0px;
+    border-radius: 0px;
+    overflow: visible;
+}
+
+.availability-table caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.availability-table th,
+.availability-table td {
+    font-size: 14px;
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid #edf2ed;
+}
+
+.availability-table thead th {
+    background: #f2f7f2;
+    color: #20411d;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-weight: 700;
+}
+
+.availability-table .date-cell {
+    text-align: left;
+    color: #1a1a1a;
+    white-space: nowrap;
+    background: #fbfdfb;
+    font-weight: 600;
+}
+
+.availability-table tbody tr:nth-child(even) .date-cell {
+    background: #f6faf6;
+}
+
+.availability-table th:not(.date-cell),
+.availability-table .status-cell {
+    width: 96px;
+    min-width: 96px;
+    max-width: 96px;
+}
+
+.status-cell {
+    white-space: nowrap;
+    position: relative;
+    padding: 2px !important;
+    height: 34px;
+}
+
+.status-dot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #d8efdc;
+    box-shadow: inset 0 0 0 1px #b1d9b8;
+}
+
+/* základní barvy */
+.status-free {
+    background: transparent;
+}
+
+.status-free .status-dot {
+    --status-fill: #d8efdc;
+    --status-border: #b1d9b8;
+    background: var(--status-fill);
+    box-shadow: inset 0 0 0 0.75px var(--status-border);
+}
+
+.status-reserved {
+    background: transparent;
+}
+
+.status-reserved .status-dot {
+    --status-fill: #f5d7d7;
+    --status-border: #e3afaf;
+    background: var(--status-fill);
+    box-shadow: inset 0 0 0 0.75px var(--status-border);
+}
+
+.status-tentative {
+    background: transparent;
+}
+
+.status-tentative .status-dot {
+    --status-fill: #f8e7cd;
+    --status-border: #e7c89d;
+    background: var(--status-fill);
+    box-shadow: inset 0 0 0 0.75px var(--status-border);
+}
+
+/* společný základ pro půlené buňky */
+.status-cell.status-edge-start .status-dot,
+.status-cell.status-edge-end .status-dot {
+    background: #d8efdc;
+    box-shadow: inset 0 0 0 0.75px #b1d9b8;
+}
+
+.status-cell.status-edge-start .status-dot::before,
+.status-cell.status-edge-start .status-dot::after,
+.status-cell.status-edge-end .status-dot::before,
+.status-cell.status-edge-end .status-dot::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+}
+
+/* první den rezervace = horní půlka volná, dolní půlka obsazená */
+.status-cell.status-edge-start .status-dot::before {
+    top: 0;
+    background: var(--status-adjacent-fill, #d8efdc);
+    border-top: 1px solid var(--status-adjacent-border, #b1d9b8);
+    border-left: 1px solid var(--status-adjacent-border, #b1d9b8);
+    border-right: 1px solid var(--status-adjacent-border, #b1d9b8);
+    border-radius: 4px 4px 0 0;
+}
+
+.status-cell.status-edge-start .status-dot::after {
+    bottom: 0;
+    background: var(--status-fill, #f5d7d7);
+    border-bottom: 1px solid var(--status-border, #e3afaf);
+    border-left: 1px solid var(--status-border, #e3afaf);
+    border-right: 1px solid var(--status-border, #e3afaf);
+    border-radius: 0 0 4px 4px;
+}
+
+/* poslední den rezervace = horní půlka obsazená, dolní půlka volná */
+.status-cell.status-edge-end .status-dot::before {
+    top: 0;
+    background: var(--status-fill, #f5d7d7);
+    border-top: 1px solid var(--status-border, #e3afaf);
+    border-left: 1px solid var(--status-border, #e3afaf);
+    border-right: 1px solid var(--status-border, #e3afaf);
+    border-radius: 4px 4px 0 0;
+}
+
+.status-cell.status-edge-end .status-dot::after {
+    bottom: 0;
+    background: var(--status-adjacent-fill, #d8efdc);
+    border-bottom: 1px solid var(--status-adjacent-border, #b1d9b8);
+    border-left: 1px solid var(--status-adjacent-border, #b1d9b8);
+    border-right: 1px solid var(--status-adjacent-border, #b1d9b8);
+    border-radius: 0 0 4px 4px;
+}
+
+.availability-fallback {
+    font-size: 16px;
+    line-height: 1.6;
+    background: #f7f7f7;
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid #ececec;
+    color: #222;
+}
+
+/* =====================================
+   RESPONZIVITA (MOBILY A NOTEBOOKY)
+===================================== */
+@media (max-width: 1100px) {
+    .karavany {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    
+    .karavaning-image img {
+        width: 100%; /* Na mobilu vrátíme obrázek na plnou šířku */
+        margin-top: 20px;
+    }
+    
+    .fotogalerie-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        padding: 0 20px; 
+    }
+    
+    .rezervace {
+        padding: 30px 20px; 
+        margin: 0 5% 50px 5%; 
+    }
+
+    .rezervace-kalendar h4 {
+        font-size: 23px;
+    }
+
+    .availability-controls {
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8px 10px;
+    }
+
+    .availability-period-label {
+        min-width: 165px;
+    }
+
+    .availability-table {
+        min-width: 740px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fotogalerie-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .calendar-legend {
+        gap: 8px;
+    }
+
+    .legend-item {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+
+    .availability-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .availability-mode,
+    .availability-nav {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .availability-btn {
+        padding: 8px 12px;
+    }
+
+    .availability-period-label {
+        min-width: 0;
+        text-align: left;
+    }
+
+    .availability-table th,
+    .availability-table td {
+        padding: 8px 9px;
+    }
+
+    .status-cell {
+        min-width: 38px;
+        height: 30px;
+    }
+}
+/* =====================================
+   STRÁNKA FOTOGALERIE - DOKONALÁ MŘÍŽKA
+===================================== */
+
+main > h1 {
+    margin-bottom: 40px; 
+    padding: 0 8%;
+}
+
+.foto {
+    display: grid;
+    /* Automatická mřížka - sama se srovná podle velikosti monitoru */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 8%;
+    margin-bottom: 80px;
+}
+
+.foto img {
+    width: 300px;  
+    height: 225px; 
+    object-fit: cover; 
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* OPRAVA OSTROSTI */
+    /* Smazali jsme will-change a přidali tohle. 
+       Zabrání to prohlížeči, aby při animaci fotku "rozmazal" */
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+
+/* =====================================
+   LIGHTBOX (Kino režim pro kvalitní fotky)
+===================================== */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#lightbox-img {
+    max-width: 90vw; 
+    max-height: 90vh; 
+    object-fit: contain; 
+    border-radius: 5px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+/* Ovládací prvky (Křížek a šipky) */
+.lb-close, .lb-prev, .lb-next {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    user-select: none;
+    z-index: 10000;
+}
+
+.lb-close {
+    top: 20px;
+    right: 40px;
+    font-size: 50px;
+}
+
+.lb-prev, .lb-next {
+    font-size: 60px; /* Větší šipky pro snazší klikání */
+}
+
+.lb-prev { left: 30px; }
+.lb-next { right: 30px; }
+
+.lb-close:hover, .lb-prev:hover, .lb-next:hover {
+    color: #2d5a27; 
+    transform: scale(1.15); 
+}
+
+/* Responzivita pro mobily */
+@media (max-width: 700px) {
+    .lb-close { top: 10px; right: 20px; font-size: 40px; }
+    .lb-prev { left: 10px; font-size: 40px; }
+    .lb-next { right: 10px; font-size: 40px; }
+    #lightbox-img { max-width: 100vw; max-height: 80vh; }
+}
+
+/* =====================================
+   STRÁNKA ŘÁD
+===================================== */
+
+/* Obalení veškerého textu Řádu do sjednocené krabice */
+.rad {
+    padding: 10px 8% 0 8%; /* MEZERA: Stejná jako u kempování a karavanů */
+    box-sizing: border-box;
+}
+
+/* Sjednocený hlavní nadpis sekce */
+.rad h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 25px;
+}
+
+/* Podnadpisy */
+.rad h3 {
+    font-size: 24px;
+    color: #000;
+    margin-top: 40px; 
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Běžný text */
+.rad p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Poslední pozdrav */
+.rad p:last-of-type {
+    margin-bottom: 60px; /* Víc místa před Oceněním */
+    font-weight: bold;
+    color: black; 
+}
+
+/* Seznamy (Odrážky) */
+.rad ul {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-left: 20px; 
+    list-style-position: outside; 
+}
+
+.rad li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+/* Zelené odrážky */
+.rad li::marker {
+    color: #2d5a27;
+    font-weight: bold;
+}

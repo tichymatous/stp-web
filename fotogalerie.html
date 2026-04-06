@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="kemp, kempovani, slapy" />
+    <meta
+      name="description"
+      content="Stanování a karavaning nebo ubytování v našich plně vybavených karavanech ve stinném a klidném lesním prostředí na břehu Slapské přehrady, pouhých 45 km od Prahy."
+    />
+    <title>Lesní tábořiště Nebřich</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="images/logo3.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo3.png" alt="logo" /></a>
+        </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="kempovani.html">Kemp</a></li>
+            <li><a href="karavany.html">Karavany</a></li>
+            <li><a href="cenik.html">Ceník</a></li>
+            <li><a href="sluzby.html">Služby</a></li>
+            <li><a href="konktakt.html">Kontakt</a></li>
+            <li><a href="fotogalerie.html">Fotogalerie</a></li>
+            <li><a href="rad.html">Řád</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <h1>Fotogalerie</h1>
+      
+      <section class="foto">
+        <img src="fotogalerie/kemp1.jpg" alt="Kemp" loading="lazy">
+        <img src="fotogalerie/kemp2.jpg" alt="Kemp" loading="lazy">
+        <img src="fotogalerie/kemp3.jpg" alt="Most" loading="lazy">
+        <img src="fotogalerie/kemp5.jpg" alt="Pláž" loading="lazy">
+        <img src="fotogalerie/kemp6.jpg" alt="Pláž" loading="lazy">
+        <img src="fotogalerie/kemp7.jpg" alt="Stanování" loading="lazy">
+        <img src="fotogalerie/kemp8.jpg" alt="Prostředí" loading="lazy">
+        <img src="fotogalerie/kemp4.jpg" alt="Půjčovna lodiček" loading="lazy">
+        <img src="fotogalerie/kemp15.JPG" alt="Motorové čluny" loading="lazy">
+        <img src="fotogalerie/kemp9.jpg" alt="Kiosek" loading="lazy">
+        <img src="fotogalerie/kemp10.jpg" alt="Antuka" loading="lazy">
+        <img src="fotogalerie/kemp13.jpg" alt="Hřiště" loading="lazy">
+        <img src="fotogalerie/kemp14.jpg" alt="Ping-pong" loading="lazy">
+        <img src="fotogalerie/kemp11.jpg" alt="Sprchy" loading="lazy">
+        <img src="fotogalerie/kemp12.jpg" alt="Toalety" loading="lazy">
+      </section>  
+
+      <section class="oceneni">
+        <div class="kontakt">
+          <h2>Kontakt</h2>
+          <p><a href="tel:797726085">Telefon: 797 726 085</a></p>
+          <p>
+            <a href="mailto:lesnitaboriste@email.cz"
+              >E-mail: lesnitaboriste@email.cz</a
+            >
+          </p>
+          <p><a href="https://www.google.com/maps/place/Lesn%C3%AD+t%C3%A1bo%C5%99i%C5%A1t%C4%9B+Neb%C5%99ich/@49.7700005,14.4098944,17z/data=!3m1!4b1!4m6!3m5!1s0x470b7802d6de301b:0x1d00af105e444360!8m2!3d49.7699971!4d14.4124693!16s%2Fg%2F1tl1m4s_?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Nebřich 33, 257 44 Neveklov-Netvořice</a></p>
+        </div>
+        <div class="oceneni-center">
+          <h2>Naše ocenění</h2>
+          <img
+            src="images/Kemp-roku_Badge_Stredocesky_2.png"
+            alt="Kemp roku Středočeský kraj"
+          />
+          <img src="images/Kemp-roku_Badge_Top25.png" alt="Top 25 kempů" />
+        </div>
+        <div class="oceneni-right">
+          <h2>Ohodnoťte nás v soutěži</h2>
+          <a href="https://www.dokempu.cz/lesni-taboriste-nebrich--kemp-643" target="_blank">
+            <img src="images/kemprokusoutez.png" alt="Kemp roku soutěž" />
+          </a>
+        </div>
+      </section>
+
+      <div id="lightbox" class="lightbox-modal">
+        <span class="lb-close">&times;</span>
+        <span class="lb-prev">&#10094;</span>
+        <span class="lb-next">&#10095;</span>
+        <img id="lightbox-img" src="" alt="Zvětšená fotka">
+      </div>
+</main>
+
+<script>
+    const images = document.querySelectorAll('.foto img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex].src;
+        lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        // Profi trik: po zavření vymažeme fotku z paměti, ať se web neseká
+        setTimeout(() => { lightboxImg.src = ''; }, 300); 
+    }
+
+    function changeImage(direction, e) {
+        if (e) e.stopPropagation();
+        currentIndex = (currentIndex + direction + images.length) % images.length;
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+    images.forEach((img, index) => {
+        img.addEventListener('click', () => openLightbox(index));
+    });
+
+    document.querySelector('.lb-close').addEventListener('click', closeLightbox);
+    document.querySelector('.lb-prev').addEventListener('click', (e) => changeImage(-1, e));
+    document.querySelector('.lb-next').addEventListener('click', (e) => changeImage(1, e));
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'ArrowRight') changeImage(1);
+        if (e.key === 'ArrowLeft') changeImage(-1);
+        if (e.key === 'Escape') closeLightbox();
+    });
+</script>
+
+    </main>
+
+  </body>
+</html>
