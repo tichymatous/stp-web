@@ -74,7 +74,8 @@ main h1 {
   height: 34vh;
   min-height: 250px;
   margin: 40px 4% 40px 4%; 
-  background: url("images/Solid_green.svg.png") center/cover no-repeat;
+  background: url("fotogalerie/kemp2.jpg") center /100% no-repeat;
+  background-position: center 55%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,6 +143,10 @@ main h1::after {
   margin-bottom: 40px;
   color: #1a1a1a;
   text-transform: uppercase;
+}
+
+.oceneni .kontakt h2 {
+  font-size: 26px;
 }
 
 /* ===== KONTAKT ===== */
@@ -241,42 +246,13 @@ body {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 80px;
-  padding: 0 8% 80px 8%;
+  padding: 10px 8% 80px 8%;
   align-items: start;
 }
 
 /* =====================================
    HERO
 ===================================== */
-
-.homepage .hero {
-  grid-column: 1 / -1;
-  height: 34vh;
-  min-height: 250px;
-  margin-top: 20px; /* jen malé odsazení */
-  background: url("images/Solid_green.svg.png") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  border-radius: 20px;
-}
-
-.homepage .hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  border-radius: 20px;
-}
-
-.homepage .hero h1 {
-  position: relative;
-  color: white;
-  font-size: 48px;
-  font-weight: 700;
-  z-index: 1;
-}
 
 /* =====================================
    ZÁKLADNÍ INFORMACE
